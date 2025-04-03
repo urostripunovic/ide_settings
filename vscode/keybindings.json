@@ -1,13 +1,39 @@
 [
+  // vim
   {
-    "key": "tab",
+    "key": "cmd+l",
+    "command": "cursorRight",
+    "when": "editorTextFocus && vim.mode === 'Insert'"
+  },
+  {
+    "key": "cmd+h",
+    "command": "cursorLeft",
+    "when": "editorTextFocus && vim.mode === 'Insert'"
+  },
+  {
+    "key": "cmd+j",
+    "command": "cursorDown",
+    "when": "editorTextFocus && vim.mode === 'Insert'"
+  },
+  {
+    "key": "cmd+k",
+    "command": "cursorUp",
+    "when": "editorTextFocus && vim.mode === 'Insert'"
+  },
+  {
+    "key": "ctrl+n",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "shift+tab",
+    "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
   },
   {
     "key": "cmd+;",
@@ -19,24 +45,15 @@
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
   },
+  // Terminal
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+s",
+    "key": "cmd+s",
     "command": "workbench.action.terminal.split",
-    "when": "terminalFocus"
-  },
-  // {
-    // "key": "cmd+x",
-    // "command": "workbench.action.terminal.killActiveTab",
-    // "when": "terminalFocus"
-  // },
-  {
-    "key": "cmd+r",
-    "command": "workbench.action.terminal.renameActiveTab",
     "when": "terminalFocus"
   },
   {
@@ -44,21 +61,16 @@
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "filesExplorerFocus"
   },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "filesExplorerFocus"
-  },
-  {
-    "key": "cmd+j",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+k",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
+  // {
+  //   "key": "cmd+j",
+  //   "command": "workbench.action.terminal.focusNext",
+  //   "when": "terminalFocus"
+  // },
+  // {
+  //   "key": "cmd+k",
+  //   "command": "workbench.action.terminal.focusPrevious",
+  //   "when": "terminalFocus"
+  // },
   {
     "key": "cmd+l",
     "command": "workbench.action.terminal.focusNextPane",
@@ -68,6 +80,5 @@
     "key": "cmd+h",
     "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
-  }
+  },
 ]
-
