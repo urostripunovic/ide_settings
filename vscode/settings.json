@@ -1,15 +1,58 @@
 {
     "security.workspace.trust.untrustedFiles": "open",
-    "workbench.iconTheme": "vscode-icons",
-    "files.autoSave": "afterDelay",
-    // "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
-    "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.fontFamily": "Fira Code",
-    "files.insertFinalNewline": true,
+    "editor.tabSize": 2,
+    "editor.glyphMargin": true,
+    "editor.minimap.enabled": false,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "workbench.colorTheme": "Lunar-dark-theme",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.tabStopWidth": 4,
+    "accessibility.dimUnfocused.enabled": true,
+    "workbench.settings.applyToAllProfiles": [],
+    "hediet.vscode-drawio.resizeImages": null,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Tokyo Night Storm",
+    "[yml]": {
+        "files.insertFinalNewline": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "[ansible]": {
+        "files.insertFinalNewline": true,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    },
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+        }
+    },
+    "redhat.telemetry.enabled": false,
+    "yaml.validate": false,
     "vim.hlsearch": true,
     "vim.leader": " ",
     "vim.insertModeKeyBindings": [
@@ -20,10 +63,82 @@
             ],
             "after": [
                 "<Esc>"
-            ]
-        }
+            ],
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        //GD
+        // {
+        //     "before": ["g", "d"],
+        //     "command": "editor.action.revealDefinition",
+        //     "when": "editorHasDefinitionProvider && editorTextFocus"
+        // },
+        //GR
+        {
+            "before": [
+                "g",
+                "d",
+                "n",
+            ],
+            "after": [
+                "/",
+                "/",
+                "N",
+                "d",
+                "g",
+                "n"
+            ]
+        },
+        {
+            "before": [
+                "d",
+                "g",
+                "*"
+            ],
+            "after": [
+                "*",
+                "N",
+                "d",
+                "g",
+                "n"
+            ]
+        },
+        {
+            "before": [
+                "<up>",
+            ],
+            "after": [
+                "g",
+                "k",
+            ]
+        },
+        {
+            "before": [
+                "k",
+            ],
+            "after": [
+                "g",
+                "k",
+            ]
+        },
+        {
+            "before": [
+                "<down>",
+            ],
+            "after": [
+                "g",
+                "j",
+            ]
+        },
+        {
+            "before": [
+                "j",
+            ],
+            "after": [
+                "g",
+                "j",
+            ]
+        },
         {
             "before": [
                 ";"
@@ -42,6 +157,27 @@
                 "editor.action.formatDocument"
             ]
         },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "o"
+            ],
+            "commands": [
+                "editor.action.organizeImports",
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l",
+                "m"
+            ],
+            "commands": [
+                "editor.action.organizeImports",
+            ]
+        },
+
         {
             "before": [
                 "<C-d>"
@@ -76,6 +212,20 @@
         },
         {
             "before": [
+                "`",
+                "`"
+            ],
+            "after": [
+                "`",
+                "`",
+                "z",
+                "z",
+                "z",
+                "v"
+            ]
+        },
+        {
+            "before": [
                 "N"
             ],
             "after": [
@@ -97,36 +247,17 @@
         {
             "before": [
                 "<leader>",
-                "s"
+                "b",
+                "o"
             ],
             "commands": [
-                "workbench.action.moveEditorToNextGroup"
+                "workbench.action.closeOtherEditors"
             ]
         },
         {
             "before": [
-                "<leader>",
-                "h",
-                "s"
-            ],
-            "commands": [
-                ":split"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "p",
-                "s"
-            ],
-            "commands": [
-                "workbench.action.moveEditorToPreviousGroup"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "x"
+                "<cmd>",
+                "w"
             ],
             "commands": [
                 "workbench.action.closeActiveEditor"
@@ -135,15 +266,7 @@
         {
             "before": [
                 "<leader>",
-                "TAB"
-            ],
-            "commands": [
-                "workbench.action.focusNextGroup"
-            ]
-        },
-        {
-            "before": [
-                "<TAB>"
+                "l"
             ],
             "commands": [
                 "workbench.action.nextEditorInGroup"
@@ -151,7 +274,8 @@
         },
         {
             "before": [
-                "<Shift+TAB>"
+                "<leader>",
+                "h"
             ],
             "commands": [
                 "workbench.action.previousEditorInGroup"
@@ -159,40 +283,33 @@
         },
         {
             "before": [
-                "<leader>",
-                "/"
+                "g",
+                "c",
+                "c"
             ],
             "commands": [
                 "editor.action.commentLine"
             ]
         },
         // {
-        // "before": [
-        // "<leader>",
-        // "f",
-        // "w"
-        // ],
-        // "commands": [
-        // "workbench.action.toggleEditorWidths"
-        // ]
+        //     "before": [
+        //         "p",
+        //     ],
+        //     "after": [
+        //         "p",
+        //         "g",
+        //         "v",
+        //         "y"
+        //     ]
         // },
-        {
-            "before": [
-                "<C-n>"
-            ],
-            "commands": [
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "e"
-            ],
-            "commands": [
-                "workbench.view.explorer"
-            ]
-        },
+        // {
+        //     "before": [
+        //         "\\",
+        //     ],
+        //     "commands": [
+        //         "workbench.view.explorer"
+        //     ],
+        // },
         {
             "before": [
                 "<leader>",
@@ -214,12 +331,12 @@
                 "+",
                 "y",
                 "]]"
-            ]
+            ],
         },
         {
             "before": [
                 "<C-h>"
-            ], //right
+            ],
             "after": [
                 "<C-w>",
                 "h"
@@ -228,7 +345,7 @@
         {
             "before": [
                 "<C-j>"
-            ], //down
+            ],
             "after": [
                 "<C-w>",
                 "j"
@@ -237,7 +354,7 @@
         {
             "before": [
                 "<C-k>"
-            ], //up
+            ],
             "after": [
                 "<C-w>",
                 "k"
@@ -246,7 +363,7 @@
         {
             "before": [
                 "<C-l>"
-            ], //left
+            ],
             "after": [
                 "<C-w>",
                 "l"
@@ -263,7 +380,7 @@
                 "+",
                 "Y",
                 "]]"
-            ]
+            ],
         },
         {
             "before": [
@@ -276,7 +393,7 @@
                 "+",
                 "y",
                 "]]"
-            ]
+            ],
         },
         {
             "before": [
@@ -292,11 +409,11 @@
             "before": [
                 "<leader>",
                 "f",
-                "w"
+                "g"
             ],
             "commands": [
-                "workbench.action.quickTextSearch"
-            ]
+                "workbench.action.quickTextSearch",
+            ],
         },
         {
             "before": [
@@ -321,14 +438,34 @@
                 "_",
                 "d",
                 "]]"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "s"
+            ],
+            "commands": [
+                "typescript.restartTsServer"
             ]
-        }
+        },
+        {
+            "before": [
+                "<leader>",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ],
+            "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<leader>",
-                "/"
+                "g",
+                "c"
             ],
             "commands": [
                 "editor.action.commentLine",
@@ -346,7 +483,7 @@
                 "+",
                 "y",
                 "]]"
-            ]
+            ],
         },
         {
             "before": [
@@ -359,22 +496,22 @@
                 "+",
                 "Y",
                 "]]"
-            ]
-        },
-        {
-            "before": [
-                "<leader>",
-                "p"
             ],
-            "after": [
-                "[[",
-                "\"",
-                "_",
-                "d",
-                "P",
-                "]]"
-            ]
         },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "p"
+        //     ],
+        //     "after": [
+        //         "[[",
+        //         "\"",
+        //         "_",
+        //         "d",
+        //         "P",
+        //         "]]"
+        //     ],
+        // },
         {
             "before": [
                 "<leader>",
@@ -386,7 +523,7 @@
                 "_",
                 "d",
                 "]]"
-            ]
+            ],
         },
         {
             "before": [
@@ -394,7 +531,7 @@
             ],
             "commands": [
                 "editor.action.moveLinesDownAction"
-            ]
+            ],
         },
         {
             "before": [
@@ -402,8 +539,16 @@
             ],
             "commands": [
                 "editor.action.moveLinesUpAction"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                "editor.action.rename",
             ]
         }
-    ]
+    ],
 }
-
