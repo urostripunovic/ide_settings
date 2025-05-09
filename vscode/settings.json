@@ -45,6 +45,12 @@
             "strings": true
         }
     },
+    "[tsx]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+        }
+    },
     "[typescript]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
@@ -55,6 +61,7 @@
     "yaml.validate": false,
     "vim.hlsearch": true,
     "vim.leader": " ",
+    "vim.useSystemClipboard": true,
     "vim.insertModeKeyBindings": [
         {
             "before": [
@@ -65,8 +72,56 @@
                 "<Esc>"
             ],
         },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": []
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": []
+        },
         //GD
         // {
         //     "before": ["g", "d"],
@@ -103,33 +158,33 @@
                 "n"
             ]
         },
+        // {
+        //     "before": [
+        //         "<up>",
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "k",
+        //     ]
+        // },
         {
             "before": [
-                "<up>",
+                "k",
             ],
             "after": [
                 "g",
                 "k",
             ]
         },
-        {
-            "before": [
-                "k",
-            ],
-            "after": [
-                "g",
-                "k",
-            ]
-        },
-        {
-            "before": [
-                "<down>",
-            ],
-            "after": [
-                "g",
-                "j",
-            ]
-        },
+        // {
+        //     "before": [
+        //         "<down>",
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "j",
+        //     ]
+        // },
         {
             "before": [
                 "j",
@@ -177,7 +232,6 @@
                 "editor.action.organizeImports",
             ]
         },
-
         {
             "before": [
                 "<C-d>"
@@ -291,25 +345,6 @@
                 "editor.action.commentLine"
             ]
         },
-        // {
-        //     "before": [
-        //         "p",
-        //     ],
-        //     "after": [
-        //         "p",
-        //         "g",
-        //         "v",
-        //         "y"
-        //     ]
-        // },
-        // {
-        //     "before": [
-        //         "\\",
-        //     ],
-        //     "commands": [
-        //         "workbench.view.explorer"
-        //     ],
-        // },
         {
             "before": [
                 "<leader>",
@@ -320,19 +355,20 @@
                 "workbench.action.quickOpen"
             ]
         },
-        {
-            "before": [
-                "<leader>",
-                "y"
-            ],
-            "after": [
-                "[[",
-                "\"",
-                "+",
-                "y",
-                "]]"
-            ],
-        },
+        // not needed if "vim.useSystemClipboard": true,
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "y"
+        //     ],
+        //     "after": [
+        //         "[[",
+        //         "\"",
+        //         "+",
+        //         "y",
+        //         "]]"
+        //     ],
+        // },
         {
             "before": [
                 "<C-h>"
@@ -371,7 +407,8 @@
         },
         {
             "before": [
-                "<leader>",
+                // not needed if "vim.useSystemClipboard": true,
+                // "<leader>",
                 "Y"
             ],
             "after": [
@@ -382,19 +419,20 @@
                 "]]"
             ],
         },
-        {
-            "before": [
-                "<leader>",
-                "y"
-            ],
-            "after": [
-                "[[",
-                "\"",
-                "+",
-                "y",
-                "]]"
-            ],
-        },
+        // not needed if "vim.useSystemClipboard": true,
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "y"
+        //     ],
+        //     "after": [
+        //         "[[",
+        //         "\"",
+        //         "+",
+        //         "y",
+        //         "]]"
+        //     ],
+        // },
         {
             "before": [
                 "<ESC>"
@@ -443,6 +481,20 @@
         {
             "before": [
                 "<leader>",
+                "p"
+            ],
+            "after": [
+                "[[",
+                "\"",
+                "_",
+                "d",
+                "P",
+                "]]"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
                 "r",
                 "s"
             ],
@@ -472,22 +524,24 @@
                 "extension.vim_escape"
             ]
         },
+        // not needed if "vim.useSystemClipboard": true,
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "y"
+        //     ],
+        //     "after": [
+        //         "[[",
+        //         "\"",
+        //         "+",
+        //         "y",
+        //         "]]"
+        //     ],
+        // },
         {
             "before": [
-                "<leader>",
-                "y"
-            ],
-            "after": [
-                "[[",
-                "\"",
-                "+",
-                "y",
-                "]]"
-            ],
-        },
-        {
-            "before": [
-                "<leader>",
+                // not needed if "vim.useSystemClipboard": true,
+                // "<leader>",
                 "Y"
             ],
             "after": [
@@ -498,20 +552,20 @@
                 "]]"
             ],
         },
-        // {
-        //     "before": [
-        //         "<leader>",
-        //         "p"
-        //     ],
-        //     "after": [
-        //         "[[",
-        //         "\"",
-        //         "_",
-        //         "d",
-        //         "P",
-        //         "]]"
-        //     ],
-        // },
+        {
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "[[",
+                "\"",
+                "_",
+                "d",
+                "P",
+                "]]"
+            ],
+        },
         {
             "before": [
                 "<leader>",
@@ -541,14 +595,49 @@
                 "editor.action.moveLinesUpAction"
             ],
         },
+        //WIP
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "s"
+        //     ],
+        //     "commands": [
+        //         "editor.action.rename",
+        //     ]
+        // },
         {
             "before": [
-                "<leader>",
-                "s"
+                "$"
             ],
-            "commands": [
-                "editor.action.rename",
+            "after": [
+                "$",
+                "h"
             ]
-        }
+        },
+        {
+            "before": [
+                "<Left>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Right>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Up>"
+            ],
+            "after": []
+        },
+        {
+            "before": [
+                "<Down>"
+            ],
+            "after": []
+        },
     ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
 }
