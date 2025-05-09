@@ -36,14 +36,24 @@
     "when": "suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "cmd+;",
+    "key": "ctrl+\\",
     "command": "workbench.action.terminal.focus",
     "when": "!terminalFocus"
   },
   {
-    "key": "cmd+;",
+    "key": "ctrl+\\",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
+  },
+  {
+    "key": "\\",
+    "command": "workbench.view.explorer",
+    "when": "!sideBarVisible && vim.mode == 'Normal'"
+  },
+  {
+    "key": "\\",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible && vim.mode == 'Normal'"
   },
   // Terminal
   {
@@ -61,16 +71,16 @@
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "filesExplorerFocus"
   },
-  // {
-  //   "key": "cmd+j",
-  //   "command": "workbench.action.terminal.focusNext",
-  //   "when": "terminalFocus"
-  // },
-  // {
-  //   "key": "cmd+k",
-  //   "command": "workbench.action.terminal.focusPrevious",
-  //   "when": "terminalFocus"
-  // },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
   {
     "key": "cmd+l",
     "command": "workbench.action.terminal.focusNextPane",
